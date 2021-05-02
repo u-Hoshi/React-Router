@@ -5,10 +5,10 @@ export const Page1 = () => {
     <div>
       <h1>Page1です</h1>
       {/* <Link to="/Page1/DetailsA">DetailsA</Link> */}
-      <Link to="/Page1/DetailsA">
+      <Link to="/page1/detailsA">
         <button>DetailsA</button>
       </Link>
-      <Link to="/Page1/DetailsB">DetailsB</Link>
+      <Link to="/page1/detailsB">DetailsB</Link>
     </div>
   );
 };

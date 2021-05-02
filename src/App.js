@@ -1,11 +1,8 @@
-import { BrowserRouter, Link, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Link } from "react-router-dom";
 
 import "./styles.css";
-import { Home } from "./Home";
-import { Page1 } from "./Page1";
-import { Page2 } from "./Page2";
-import { Page1DetailsA } from "./Page1DetailsA";
-import { Page1DetailsB } from "./Page1DetailsB";
+
+import { Router } from "./router/Router";
 
 export default function App() {
   return (
@@ -18,36 +15,8 @@ export default function App() {
         {/* <Home />
         <Page1 />
         <Page2 /> */}
+        <Router />
       </div>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        {/* ネストされたページの遷移 */}
-        <Route
-          path="/page1"
-          // render={(props) => ( //propsの中のurlを取り出すには以下のように書く
-          render={({ match: { url } }) => (
-            <Switch>
-              <Route exact path={url}>
-                <Page1 />
-              </Route>
-              <Route path={`${url}/detailsA`}>
-                {" "}
-                {/* テンプレート配列 */}
-                <Page1DetailsA />
-              </Route>
-              <Route path={url + "/detailsB"}>
-                　{/* 文字列配列 */}
-                <Page1DetailsB />
-              </Route>
-            </Switch>
-          )}
-        />
-        <Route path="/page2">
-          <Page2 />
-        </Route>
-      </Switch>
     </BrowserRouter>
   );
 }
