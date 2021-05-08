@@ -1,6 +1,7 @@
 import { Switch, Route } from "react-router-dom";
 import { Home } from "../Home";
-import { Page2 } from "../Page2";
+import { Page3 } from "../Page3";
+import { Page3Details } from "../Page3Details";
 import { Page404 } from "../Page404";
 import { page1Routes } from "./Page1Routes";
 import { page2Routes } from "./Page2Routes";
@@ -44,6 +45,28 @@ export const Router = () => {
                 {route.children}
               </Route>
             ))}
+          </Switch>
+        )}
+      />
+      {/* ネストしたルーティングには○○を使う */}
+      <Route
+        path="/page3"
+        render={() => (
+          // この中は普通のreact-routerと一緒
+          <Switch>
+            <Route
+              exact
+              path="/page3"
+              render={() => (
+                <Switch>
+                  <Route path="/page3/details">
+                    <Page3Details />
+                  </Route>
+                </Switch>
+              )}
+            >
+              <Page3 />
+            </Route>
           </Switch>
         )}
       />
