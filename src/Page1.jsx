@@ -1,12 +1,10 @@
 import { Link, useHistory } from "react-router-dom";
 
 export const Page1 = () => {
+  // 無意味な配列100件を作成、これをpage1DetailsAに渡す
   const arr = [...Array(100).keys()];
-  console.log(arr);
 
   const history = useHistory();
-
-  console.log(history);
 
   const onClickDetailA = () => {
     history.push("/page1/detailsA");
@@ -17,6 +15,7 @@ export const Page1 = () => {
       <div>
         <h1>Page1です</h1>
         {/* <Link to="/page1/detailsA"> */}
+        {/* linkのtoをオブジェクトの形にかえてstateを渡す */}
         <Link to={{ pathname: "/page1/detailsA", state: arr }}>
           <button>DetailsA</button>
         </Link>

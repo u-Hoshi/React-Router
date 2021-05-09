@@ -9,7 +9,7 @@ export const page2Routes = [
   },
   {
     path: "/:id",
-    // パスの中に:を使うことでURLパラメータを使うと宣言している
+    // パスの中に「:」を使うことでURLパラメータを使うと宣言している
     exact: false,
     children: <UrlParameter />
   }

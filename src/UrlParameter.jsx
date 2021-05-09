@@ -1,11 +1,11 @@
 import { useLocation, useParams } from "react-router-dom";
 
 export const UrlParameter = () => {
-  // パラメータ取得
+  // パラメータ取得・userParamsを使用
   const { id } = useParams();
   console.log(useParams());
   // ここまで
-  // クエリーパラメーターに関して
+  // クエリーパラメーターに関して、uselocationとURLSearchParamsを使用
   const { search } = useLocation();
   console.log(useLocation());
   const query = new URLSearchParams(search);

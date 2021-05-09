@@ -1,7 +1,8 @@
 import { useLocation, useHistory } from "react-router-dom";
 
 export const Page1DetailsA = () => {
-  const { state } = useLocation();
+  // const { state } = useLocation();
+  const state = useLocation();
   console.log(state);
 
   const history = useHistory();
